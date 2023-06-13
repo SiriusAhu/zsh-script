@@ -2,16 +2,18 @@
 
 This is a little script to install the plugins(/theme) I use(recommended) in my zsh config.
 
+> When I'm working in a new Linux device which just installed zsh and oh-my-zsh.
+
 ## What will be downloaded
 Theme:
-    - powerlevel10k
+- powerlevel10k
 
 Plugins:
-    - zsh-syntax-highlighting
-    - zsh-autosuggestions
-    - zsh-history-substring-search
-    - auto-notify
-    - you-should-use
+- zsh-syntax-highlighting
+- zsh-autosuggestions
+- zsh-history-substring-search
+- auto-notify
+- you-should-use
 
 ## Requirements
 
@@ -48,3 +50,13 @@ Since this script is to install plugins(theme) for `oh-my-zsh`, you should make 
     - [The Fonts poverlevel10k recommended](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
 
 5. Restart your terminal and enjoy it!
+
+---
+
+## QA
+
+Q: I have downloaded my fonts, but why it seems not work?
+> A: You may make sure you have set the font in your terminal. For example, in `gnome-terminal`, you can set it in `Edit -> Preferences -> Profiles -> Text Appearance -> Custom font`.
+
+## TODO
+- [ ] Add arguments to choose the download path of fonts.
