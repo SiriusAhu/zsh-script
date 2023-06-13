@@ -13,10 +13,38 @@ Plugins:
     - auto-notify
     - you-should-use
 
-## How to use
+## Requirements
 
-Clone (or just copy) the script to anywhere you want, and run it.
+Since this script is to install plugins(theme) for `oh-my-zsh`, you should make sure you have installed both `zsh` and `oh-my-zsh`.
 
-```python
-python3 install.py
-```
+- Install `zsh`:
+    - For Debian-based Linux(Ubuntu, Linux Mint, etc.):
+        ```bash
+        sudo apt install zsh
+        ```
+    - For Arch-based Linux:
+        ```bash
+        sudo pacman -S zsh
+        ```
+
+## Install & Use
+
+1. Clone this repo:
+    ```bash
+    git clone https://github.com/SiriusAhu/zsh-scripts.git
+    ```
+
+2. Go to the directory:
+    ```bash
+    cd zsh-scripts
+    ```
+
+3. Run the script:
+    ```bash
+    python3 install.py
+    ```
+
+4. Install the fonts if you needed.
+    - [The Fonts poverlevel10k recommended](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
+
+5. Restart your terminal and enjoy it!
