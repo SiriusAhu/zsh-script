@@ -202,9 +202,9 @@ def _page4():
         plugin_lines = []
         # remain the exsisting plugins
         for plugin in exsisting_plugins:
-            plugin_lines.append("    " + plugin + "\n")
+            plugin_lines.append("  \"" + plugin + "\"\n")
         for plugin in NEW_PLUGINS:
-            plugin_lines.append("    " + plugin + "\n")
+            plugin_lines.append("  \"" + plugin + "\"\n")
         # Add plugins to the line of plugins
         for i in range(len(lines)):
             # Replace the lines between '(' and ')' with plugin_lines
@@ -217,7 +217,7 @@ def _page4():
             # rewrite the first line, and add the ')' after the last line
             lines[start_index] = "plugins=(\n"
             plugin_lines.append(")\n")
-        lines[start_index + 1 : end_index] = plugin_lines
+        lines[start_index + 1: end_index] = plugin_lines
         # Write the new .zshrc
         _write_in(lines)
     except Exception as e:
