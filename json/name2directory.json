@@ -1,0 +1,5 @@
+{
+    "theme": "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes",
+    "plugins": "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins",
+    "fonts": "$HOME/Downloads/fonts"
+}
