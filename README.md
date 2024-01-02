@@ -1,5 +1,7 @@
 ## What's this
 
+> version: 2.0
+
 This is a little script to install the plugins(/theme) I use(recommended) in my zsh config.
 
 > When I'm working in a new Linux device which just installed zsh and oh-my-zsh.
@@ -29,6 +31,17 @@ Since this script is to install plugins(theme) for `oh-my-zsh`, you should make 
         sudo pacman -S zsh
         ```
 
+- Install `oh-my-zsh`:
+    `curl`:
+    ```bash
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
+    or `wget`:
+    ```bash
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
+---
+
 ## Install & Use
 
 1. Clone this repo:
@@ -51,6 +64,17 @@ Since this script is to install plugins(theme) for `oh-my-zsh`, you should make 
 
 5. Restart your terminal and enjoy it!
 
+## Reset
+This script will backup both your original and current `~/.zshrc` file
+- original: The `~/.zshrc` file before you run this script
+    - Used by `reset.py` | won't be overwritten after created
+- current: The `~/.zshrc` file after you run this script
+    - backup to `./bak/.zshrc.bak` | can be overwritten every time you run this script
+
+If you want to reset your `~/.zshrc` file, just run:
+```bash
+python3 reset.py
+```
 ---
 
 ## QA
