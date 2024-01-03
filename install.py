@@ -1,11 +1,17 @@
 import json
 import os
+from utils.utils import *
+from utils.Interaction import *
 
 PATH_NAME2LINK = "./json/name2link.json"
 PATH_NAME2DIRECTORY = "./json/name2directory.json"
 
-from utils.utils import *
-from utils.Interaction import *
+plugins_addtion = [
+    "copyfile",
+    "copypath",
+    "copybuffer",
+    "sudo",
+]
 
 backup_zshrc()
 tip_userContinue()
@@ -25,8 +31,10 @@ plugins_bool = [True] * len(plugins)
 fonts = list(link_info["fonts"].keys())
 fonts_links = list(link_info['fonts'].values())
 
-page1(plugins, theme)
-
-page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text)
+page0(plugins, theme)
+containAddition = page1(plugins_addtion)
+if not containAddition:
+    plugins_addtion = []
+page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text, plugins_addtion)
 page3(fonts, fonts_links)
 page4()

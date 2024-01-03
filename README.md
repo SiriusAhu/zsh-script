@@ -1,6 +1,6 @@
 ## What's this
 
-> version: 2.0
+> version: 2.1
 
 This is a little script to install the plugins(/theme) I use(recommended) in my zsh config.
 
@@ -16,6 +16,10 @@ Plugins:
 - zsh-history-substring-search
 - auto-notify
 - you-should-use
+- copyfile
+- copypath
+- copybuffer
+- sudo
 
 ## Requirements
 

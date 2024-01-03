@@ -78,6 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	copypath
 	auto-notify
 	git
 	you-should-use
@@ -113,6 +114,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias eblog="code ~/blog" # 快速开始编辑
+#alias gtoken="sh ~/scripts/copy_github-token.sh" # 复制github token到剪贴板
+alias gtoken="copyfile ~/blog/github-token"
+alias hd="hexo d && gtoken"
+alias hs="hexo s -p 1324"
+alias chgs="gtoken && sh ~/scripts/config_backup.sh && python ~/scripts/cp_blog_source.py && hexo g && sh ~/scripts/cp_blog_img.sh " # hexo g and synchronize（备份配置文件+同步博客文件+generate+同步博客图片）
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -136,3 +143,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

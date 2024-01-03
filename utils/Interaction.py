@@ -24,7 +24,9 @@ def tip_userContinue(text="- Press any key to continue..."):
     print(text)
     input()
 
-def page1(plugins, theme):
+
+
+def page0(plugins, theme):
     print("---- Welcome ---")
     print("  This is a script to help you install some useful theme and plugins for zsh:")
     print("  Please make sure you have installed \033[41mzsh\033[0m and \033[41moh-my-zsh\033[0m before. (alos, \033[41mwget\033[0m is needed for download fonts)")
@@ -47,10 +49,23 @@ def page1(plugins, theme):
         _exit()
     os.system("clear")
 
-def page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text):
+def page1(plugins_addition):
+    print("---- Before installation ----")
+    print("  Here are some integrated plugins which are of good use:")
+    for plugin in plugins_addition:
+        print("\t" + plugin)
+    print("- Do you want to install them? (Y/n)")
+    inpt = input()
+    addition = tip_userMakeDecision(inpt)
+    os.system("clear")
+    return addition
+
+def page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text, plugins_addtion):
     print("---- Installation ----")
     print("  This method will install the following plugins:")
     for plugin in plugins:
+        print("\t" + plugin)
+    for plugin in plugins_addtion:
         print("\t" + plugin)
     print("  This method will install the following theme:")
     print("\t" + theme)
@@ -76,7 +91,7 @@ def page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text):
     inpt = input()
     if tip_userMakeDecision(inpt):
         print("# Note: Editing... #")
-        edit_zshrc(ZSHRC_HOME, plugins, plugins_bool, theme_text)
+        edit_zshrc(ZSHRC_HOME, plugins, plugins_bool, plugins_addtion, theme_text)
         print("# Note: Editing completed #")
     print("# Note: Installation completed #")
 

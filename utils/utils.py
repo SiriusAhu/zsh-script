@@ -74,19 +74,19 @@ def backup_zshrc():
     os.system(cp)
     
 
-def edit_zshrc(zshrc_path, plugins, plugins_bool, theme_text):
+def edit_zshrc(zshrc_path, plugins, plugins_bool, plugins_addtion, theme_text):
     """
     edit zshrc file
     """
     # edit plugins
-    edit_plugins(zshrc_path, plugins, plugins_bool)
+    edit_plugins(zshrc_path, plugins, plugins_bool, plugins_addtion)
 
     # # edit theme (only for powerlevel10k)
     edit_theme_p10k(zshrc_path, theme_text)
 
 
 #region - edit plugins
-def edit_plugins(zshrc_path, plugins, plugins_bool):
+def edit_plugins(zshrc_path, plugins, plugins_bool, plugins_addtion):
     old_plugins_info = find_old_plugins(zshrc_path)
     old_plugins = old_plugins_info["old_plugins"]
     start_line = old_plugins_info["start_line"]
@@ -97,8 +97,10 @@ def edit_plugins(zshrc_path, plugins, plugins_bool):
         if item in old_plugins:
             plugins_bool[i] = False
     new_plugins = [item for item, keep in zip(plugins, plugins_bool) if keep]
-    # new_plugins: new_plugins + old_plugins
+    # new_plugins: new_plugins + old_plugins + plugins_addtion
     new_plugins.extend(old_plugins)
+    if plugins_addtion != []:
+        new_plugins.extend(plugins_addtion)
     # sort: from a to z
     new_plugins.sort(reverse=True)
 
