@@ -78,7 +78,11 @@ def page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text, p
     print("# Note: Installing... #")
     print()
     for link in plugins_links:
-        gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins", link)
+        # For "zsh-you-should-be", it should be put at "$ZSH_CUSTOM/plugins/you-should-use"
+        if link.split("/")[-1] == "zsh-you-should-use":
+            gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins", link)
+        else:
+            gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins", link)
     gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes", theme_link)
     
     print("# Note: Installation completed #")
