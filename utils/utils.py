@@ -23,7 +23,7 @@ def gclone(directory:str, link:str)-> None:
     """    
     # clone the repo in "directory"
     name = link.split("/")[-1].split(".")[0]
-    os.system(f"git clone {link} {os.path.join(directory, name)}")
+    os.system(f"git clone {link} {directory}")
 
 def download(directory, links):
     """
