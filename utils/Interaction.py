@@ -82,7 +82,7 @@ def page2(plugins, theme, plugins_links, theme_link, plugins_bool, theme_text, p
         if link.split("/")[-1] in ["zsh-you-should-use", "zsh-auto-notify"]:
             plugin = plugin.split("zsh-")[-1]
         gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/" + plugin, link)
-    gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes", theme_link)
+    gclone("${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes" + theme, theme_link)
     
     print("# Note: Installation completed #")
     tip_userContinue()
